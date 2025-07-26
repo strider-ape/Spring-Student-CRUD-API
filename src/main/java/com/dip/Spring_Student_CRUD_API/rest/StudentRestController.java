@@ -25,8 +25,8 @@ public class StudentRestController {
         theStudents.add(new Student("Pip", "Goswami"));
     }
 
-    @GetMapping("/students")
-    public List<Student> getStudents() {
-        return theStudents;
+    @GetMapping("/students/{studentId}")
+    public Student getStudents(@PathVariable int studentId) {
+        return theStudents.get(studentId);
     }
 }
